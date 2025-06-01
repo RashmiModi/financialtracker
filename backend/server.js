@@ -12,7 +12,7 @@ const connectDB=require("./config/db")
 app.use(
 
     cors({
-        origin:process.env.CLIENT_URL || "*",
+        origin:'https://financialtracker-asxb.vercel.app',
         methods:["GET","POST","PUT","DELETE"],
         allowedHeaders:["Content-Type", "Authorization"]
     })
