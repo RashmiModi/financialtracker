@@ -30,9 +30,12 @@ app.use("/api/v1/dashboard", dashboardRoutes)
 //server uploads folder
 app.use(express.static(path.join(__dirname, 'public'))); // Serve static files from the public directory
 
-app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, 'frontend/calc_expense_tracker/dist', 'index.html'));
-})
+app.use(express.static(path.join(__dirname, 'frontend', 'calc_expense_tracker', 'dist')));
+
+// Fallback to 'index.html' for all other routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'frontend', 'calc_expense_tracker', 'dist', 'index.html'));
+});
 app.use("/uploads",express.static(path.join(__dirname,'uploads'))); // Serve static files from the uploads directory
 const PORT=process.env.PORT|| 8000;
 app.listen(PORT,()=>{console.log(`Server is running on port ${PORT}`);
