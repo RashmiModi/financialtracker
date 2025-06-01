@@ -5,12 +5,13 @@
   "main": "server.js",
   "scripts": {
     "dev": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix frontend/calc_expense_tracker\"",
- "build": "vite build --config frontend/calc_expense_tracker/vite.config.js",
+    "build": "vite build --config frontend/calc_expense_tracker/vite.config.js",
     "server": "nodemon backend/server.js",
     "start": "node backend/server.js"
   },
   "devDependencies": {
     "concurrently": "^9.1.2",
+    "parcel": "^2.15.2",
     "react-scripts": "^5.0.1",
     "webpack": "^5.99.9",
     "webpack-cli": "^6.0.1"
