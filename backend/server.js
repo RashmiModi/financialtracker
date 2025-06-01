@@ -33,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public'))); // Serve static files f
 app.use(express.static(path.join(__dirname, 'frontend', 'calc_expense_tracker', 'dist')));
 
 // Fallback to 'index.html' for all other routes
-app.get('*', (req, res) => {
+app.get('/files/*file', (req, res) => {
   res.sendFile(path.join(__dirname, 'frontend', 'calc_expense_tracker', 'dist', 'index.html'));
 });
 app.use("/uploads",express.static(path.join(__dirname,'uploads'))); // Serve static files from the uploads directory
