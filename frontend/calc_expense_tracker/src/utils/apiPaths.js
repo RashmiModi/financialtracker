@@ -1,4 +1,4 @@
-export const BASE_URL="https://financialtracker-asxb.vercel.app/"
+export const BASE_URL="https://handsome-illumination-production.up.railway.app"
 
 export const API_PATHS={
     AUTH:{
