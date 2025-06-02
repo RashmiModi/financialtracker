@@ -8,7 +8,7 @@ const SideMenu = ({ activeMenu }) => {
   const { user, clearUser } = useContext(UserContext);
   const navigate = useNavigate();
 
-  const userProfileImage = user?.profileImageUrl || 'https://via.placeholder.com/150';
+    const userProfileImage = user?.profileImageUrl ? `${BASE_URL}/uploads/${user.profileImageUrl}` : 'https://via.placeholder.com/150';
   console.log("User Profile Image:---->>>>", userProfileImage);
 const handleClick = (item) => {
   if (item.label === 'Logout') {
